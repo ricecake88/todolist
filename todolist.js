@@ -1,20 +1,28 @@
-taskList = ['Eat Breakfast', 'Read Book', 'Do Javascript learning', 'Do C++ learning'];
 
-function displayToDos() {
-  console.log("ToDos: ", taskList);
-}
+var taskList = {
+  tasks: ['Eat Breakfast', 'Cleaning', "Read a Book", "Code Javascript", "Code C++"],
 
-function addToDo(newItem) {
-  taskList.push(newItem);
-  displayToDos();
-}
+  /* Display the list of Tasks in the ToDo List */
+  displayToDos: function() {
+    console.log("ToDos: ", this.tasks);
+  },
 
-function changeToDo(index, newItem) {
-  taskList[index] = newItem;
-  displayToDos();
-}
+  /* Add a new task to your Task List and print out the new List */
+  addToDos: function(newItem) {
+    this.tasks.push(newItem);
+    this.displayToDos();
+  },
 
-function deleteToDo(index) {
-  taskList.splice(index,1);
-  displayToDos();
-}
+  /* Change an existing Task List and print ouf the modified List */
+  changeToDo: function(index, newItem) {
+    this.tasks[index] = newItem;
+    this.displayToDos();
+  },
+
+  /* Delete an item from the Task List and display the modified List */
+  deleteToDo: function(index) {
+    this.tasks.splice(index,1);
+    this.displayToDos();
+  }
+
+};
